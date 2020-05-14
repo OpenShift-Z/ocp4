@@ -3,6 +3,7 @@
 # Author Filipe Miranda fmiranda@ibm.com 
 # Contributors: (add your name here if you contributed)
 #
+# Official DNS documentation : https://docs.openshift.com/container-platform/4.3/installing/installing_ibm_z/installing-ibm-z.html#installation-dns-user-infra_installing-ibm-z
 
 if [ "$1" == "" ]; then
   echo "Usage: `basename $0` master0_name master1_name master2_name worker1_name worker2_name ocp_cluster_name domain_name bootstrap_name"
