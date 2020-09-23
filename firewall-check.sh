@@ -1,5 +1,7 @@
 #!/bin/sh
-# This script ensured firewall rules are set correctly
+# This script ensured firewall rules are set correctly. It uses nmap and dig for consistent, predictable
+# results across different operating systems/platforms
+#
 # Author Elton de Souza elton.desouza@ca.ibm.com 
 # Contributors: (add your name here if you contributed)
 #
@@ -31,10 +33,8 @@ declare -a arr=(
     "art-rhcos-ci.s3.amazonaws.com"
     "cloud.redhat.com")
 
-## now loop through the above array
 for url in "${arr[@]}"
 do
     echo -e "\n\nChecking access to $url"
     nmap -sP --max-retries=1 --host-timeout=1500ms $(dig +short $url)
-   # or do whatever with individual element of the array
 done
