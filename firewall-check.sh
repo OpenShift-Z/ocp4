@@ -21,13 +21,14 @@ fi
 
 declare -a arr=(
     "registry.redhat.io"
-    "quay.io" "sso.redhat.com"
+    "quay.io"
+    "sso.redhat.com"
     "cert-api.access.redhat.com"
     "api.access.redhat.com"
     "infogw.api.openshift.com" # unless we disable telemetry
-    "https://cloud.redhat.com/api/ingress" # unless we disable telemetry
+    "cloud.redhat.com" # unless we disable telemetry
     "mirror.openshift.com"
-    "storage.googleapis.com/openshift-release"
+    "storage.googleapis.com"
     "quay-registry.s3.amazonaws.com"
     "api.openshift.com"
     "art-rhcos-ci.s3.amazonaws.com"
@@ -38,3 +39,4 @@ do
     echo -e "\n\nChecking access to $url"
     nmap -sP --max-retries=1 --host-timeout=1500ms $(dig +short $url)
 done
+
