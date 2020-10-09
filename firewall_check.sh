@@ -1,6 +1,7 @@
 #!/bin/sh
 # This script ensured firewall rules are set correctly. It uses nmap and dig for consistent, predictable
 # results across different operating systems/platforms
+# Note, this is ony required for connected installations. These checks will fail for Restricted/disconnected/air-gapped installations
 #
 # Author Elton de Souza elton.desouza@ca.ibm.com 
 # Contributors: (add your name here if you contributed)
