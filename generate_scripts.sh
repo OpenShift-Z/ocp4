@@ -67,16 +67,16 @@ listen ingress-http
     bind *:80
     mode tcp
 
-    server worker0 $compute0_IP_address:80 check
-    server worker1 $compute1_IP_address:80 check
+    server worker00 $compute0_IP_address:80 check
+    server worker01 $compute1_IP_address:80 check
 
 listen ingress-https
 
     bind *:443
     mode tcp
 
-    server worker0 $compute0_IP_address:443 check
-    server worker1 $compute1_IP_address:443 check
+    server worker00 $compute0_IP_address:443 check
+    server worker01 $compute1_IP_address:443 check
 
 listen api
 
@@ -84,9 +84,9 @@ listen api
     mode tcp
 
     server bootstrap $bootstrap_IP_address:6443 check
-    server master0 $master0_IP_address:6443 check
-    server master1 $master1_IP_address:6443 check
-    server master2 $master2_IP_address:6443 check
+    server master00 $master0_IP_address:6443 check
+    server master01 $master1_IP_address:6443 check
+    server master02 $master2_IP_address:6443 check
 
 listen api-int
 
@@ -94,9 +94,9 @@ listen api-int
     mode tcp
 
     server bootstrap $bootstrap_IP_address:22623 check
-    server master0 $master0_IP_address:22623 check
-    server master1 $master1_IP_address:22623 check
-    server master2 $master2_IP_address:22623 check
+    server master00 $master0_IP_address:22623 check
+    server master01 $master1_IP_address:22623 check
+    server master02 $master2_IP_address:22623 check
 EOM
 
 chmod +x bind.cfg
